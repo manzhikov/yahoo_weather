@@ -1,4 +1,5 @@
 # yahoo_weather
+[![Build Status](https://travis-ci.org/manzhikov/yahoo_weather.png?branch=master)](https://travis-ci.org/manzhikov/yahoo_weather)
 
 A Ruby object-oriented interface to the Yahoo! Weather feed.
 
