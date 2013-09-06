@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = 'manzhikov@gmail.com'
   s.homepage    = 'http://github.com/manzhikov/yahoo_weather'
   s.summary     = 'YahooWeather fetcher'
-  s.description = 'Weather'
+  s.description = 'A Ruby object-oriented interface to the Yahoo! Weather feed. It supports caching and i18n.'
   s.license     = 'MIT'
 
   s.files         = `git ls-files`.split("\n")
