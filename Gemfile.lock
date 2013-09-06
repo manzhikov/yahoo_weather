@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    yahoo_weather (1.0.0)
+    yahoo_weather (1.0.1)
       nokogiri
-      rails (~> 4.0.0)
+      rails (>= 3.1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -42,7 +42,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.24)
+    mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
     multi_json (1.7.9)
