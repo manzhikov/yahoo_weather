@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yahoo_weather (1.0.1)
+    yahoo_weather (1.0.2)
       nokogiri
       rails (>= 3.1.0)
 
