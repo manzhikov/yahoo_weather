@@ -24,11 +24,11 @@ http://developer.yahoo.com/weather/
 ```ruby
 client = YahooWeather::Client.new
 response = client.fetch(12797168)
-response.units.temperature   # "F"
-response.condition.temp      # 60
-response.wind.direction      # 110
+response.units.temperature        # "F"
+response.condition.temp           # 60
+response.wind.direction           # 110
 response.wind.direction('string') # "ESE"
-response.condition.code # 29
+response.condition.code           # 29
 response.condition.code('string') # "Partly cloudy (night)"
 ```
 
