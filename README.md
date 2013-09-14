@@ -1,8 +1,9 @@
 # yahoo_weather [![Build Status](https://travis-ci.org/manzhikov/yahoo_weather.png?branch=master)](https://travis-ci.org/manzhikov/yahoo_weather)
 
-A Ruby object-oriented interface to the Yahoo! Weather feed.
-It supports caching and i18n and works with JSON API.
-It is much faster than use nokogiri for XML.
+A Ruby object-oriented interface to the Yahoo! Weather JSON API.
+
+It supports caching and i18n.
+
 
 ## Installation
 

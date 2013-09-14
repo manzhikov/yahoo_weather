@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.author      = 'Ildar Manzhikov'
   s.email       = 'manzhikov@gmail.com'
   s.homepage    = 'http://github.com/manzhikov/yahoo_weather'
-  s.summary     = 'YahooWeather fetcher'
-  s.description = 'A Ruby object-oriented interface to the Yahoo! Weather feed. It supports caching and i18n.'
+  s.summary     = 'Ruby interface to the Yahoo! Weather JSON API'
+  s.description = 'A Ruby object-oriented interface to the Yahoo! Weather JSON API. It supports caching and i18n.'
   s.license     = 'MIT'
 
   s.files         = `git ls-files`.split("\n")
