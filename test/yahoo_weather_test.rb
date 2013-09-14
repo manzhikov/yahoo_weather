@@ -15,20 +15,6 @@ class YahooWeatherTest < ActiveSupport::TestCase
                            'San Francisco', 'CA', 'United States')
   end
 
-  test 'Fetch with the bad response' do
-    client = YahooWeather::Client.new
-    woeid_sf = '10001'
-    FakeWeb.register_uri(
-      :get,
-      "http://weather.yahooapis.com/forecastrss?w=#{woeid_sf}&u=f",
-      :body => "Nothing to be found 'round here",
-      :status => ["404", "Not Found"]
-    )
-    problem = assert_raise(RuntimeError) {client.fetch(woeid_sf)}
-    assert_equal "Failed to get xml. Got a bad status code 404 Not Found", problem.message
-    FakeWeb.clean_registry
-  end
-
   test 'Success response' do
     assert_instance_of YahooWeather::Condition, @response.condition
     assert_instance_of YahooWeather::Location, @response.location
