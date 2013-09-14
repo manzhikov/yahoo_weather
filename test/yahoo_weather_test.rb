@@ -25,7 +25,7 @@ class YahooWeatherTest < ActiveSupport::TestCase
       :status => ["404", "Not Found"]
     )
     problem = assert_raise(RuntimeError) {client.fetch(woeid_sf)}
-    assert_equal "Failed to get weather. Got a bad status code 404 Not Found", problem.message
+    assert_equal "Failed to get xml. Got a bad status code 404 Not Found", problem.message
     FakeWeb.clean_registry
   end
 

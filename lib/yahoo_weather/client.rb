@@ -8,6 +8,16 @@ class YahooWeather::Client
     YahooWeather::Response.new(doc)
   end
 
+  def fetch_by_location(location, units = YahooWeather::Units::FAHRENHEIT)
+    url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22#{::CGI.escape(location)}%22%20and%20gflags%3D%22R%22"
+    xml = fetch_xml(url)
+    doc = Nokogiri::XML(xml)
+    woeid = doc.at('woeid').children.text
+    fetch(woeid, units)
+  rescue
+    nil
+  end
+
 private
   def get_url
     "http://weather.yahooapis.com/forecastrss?w=#{@woeid}&u=#{@units}"
@@ -18,11 +28,11 @@ private
     read_cache
   end
 
-  def fetch_xml
+  def fetch_xml(url = get_url)
     begin
-      response = open(get_url)
+      response = open(url)
     rescue OpenURI::HTTPError => e
-      raise RuntimeError.new("Failed to get weather. Got a bad status code #{e.message}")
+      raise RuntimeError.new("Failed to get xml. Got a bad status code #{e.message}")
     end
 
     response.read

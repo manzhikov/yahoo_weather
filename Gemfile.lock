@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yahoo_weather (1.0.5)
+    yahoo_weather (1.0.6)
       nokogiri
       rails (>= 3.1.0)
 
@@ -45,7 +45,7 @@ GEM
     mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
-    multi_json (1.7.9)
+    multi_json (1.8.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     polyglot (0.3.3)
