@@ -9,10 +9,16 @@ class YahooWeather::Client
   end
 
   def fetch_by_location(location, units = YahooWeather::Units::FAHRENHEIT)
-    url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22#{::CGI.escape(location)}%22%20and%20gflags%3D%22R%22"
-    xml = fetch_xml(url)
-    doc = Nokogiri::XML(xml)
-    woeid = doc.at('woeid').children.text
+    woeid_cache_key = "woeid for #{location}"
+    unless Rails.cache.exist? woeid_cache_key
+      url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%22#{::CGI.escape(location)}%22%20and%20gflags%3D%22R%22"
+      xml = fetch_xml(url)
+      doc = Nokogiri::XML(xml)
+      woeid = doc.at('woeid').children.text
+      Rails.cache.write(woeid_cache_key, woeid)
+    else
+      woeid = Rails.cache.read woeid_cache_key
+    end
     fetch(woeid, units)
   rescue
     nil
