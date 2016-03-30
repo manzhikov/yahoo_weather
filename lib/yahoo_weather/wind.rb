@@ -7,7 +7,7 @@ class YahooWeather::Wind
     @speed     = payload['speed'].to_f
   end
 
-  def direction(u='integer')
+  def direction(u = 'integer')
     return @direction if u == 'integer'
 
     case @direction
@@ -48,7 +48,8 @@ class YahooWeather::Wind
     end
   end
 
-private
+  private
+
   def direction_string(name)
     I18n.t name, scope: [:yahoo_weather, :wind], default: name.to_s.upcase
   end

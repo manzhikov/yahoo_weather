@@ -5,7 +5,7 @@ class YahooWeather::Atmosphere
     FALLING = 'falling'
 
     # lists all possible barometer constants
-    ALL = [ STEADY, RISING, FALLING ]
+    ALL = [STEADY, RISING, FALLING]
   end
 
   attr_reader :humidity, :visibility, :pressure, :barometer

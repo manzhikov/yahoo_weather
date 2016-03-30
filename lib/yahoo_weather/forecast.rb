@@ -10,7 +10,7 @@ class YahooWeather::Forecast
     @low  = payload['low'].to_i
   end
 
-  def code(u='integer')
+  def code(u = 'integer')
     return @code if u == 'integer'
     YahooWeather.code_string(@code)
   end

@@ -8,7 +8,7 @@ class YahooWeather::Condition
     @date = Time.parse(payload['date'])
   end
 
-  def code(u='integer')
+  def code(u = 'integer')
     return @code if u == 'integer'
     YahooWeather.code_string(@code)
   end

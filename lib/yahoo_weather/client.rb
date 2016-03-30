@@ -5,11 +5,7 @@ class YahooWeather::Client
     @units = units
     @woeid = woeid
     doc = JSON(read_json)
-    if doc['query']['count'] > 0
-      YahooWeather::Response.new(doc)
-    else
-      nil
-    end
+    YahooWeather::Response.new(doc) if doc['query']['count'] > 0
   end
 
   def fetch_by_location(location, units = YahooWeather::Units::FAHRENHEIT)
@@ -32,7 +28,8 @@ class YahooWeather::Client
     nil
   end
 
-private
+  private
+
   def get_url
     "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D#{@woeid}%20and%20u%3D%22#{@units}%22&format=json&callback="
   end

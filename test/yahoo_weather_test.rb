@@ -2,7 +2,6 @@ require 'test_helper'
 require 'fakeweb'
 
 class YahooWeatherTest < ActiveSupport::TestCase
-
   def setup
     @client = YahooWeather::Client.new
     @woeid_sf = '12797168'
@@ -122,14 +121,15 @@ class YahooWeatherTest < ActiveSupport::TestCase
     _assert_test_text @response.description
   end
 
-private
-  def _assert_valid_response (response, request_location, units,
-                              city, region, country)
+  private
+
+  def _assert_valid_response(response, _request_location, _units,
+                             _city, _region, _country)
     assert_not_nil response
   end
 
   def _test_wind_direction(direction, direction_string)
-    response_wind = YahooWeather::Wind.new({'direction' => direction, 'chill'=> 0, 'speed'=>0})
+    response_wind = YahooWeather::Wind.new('direction' => direction, 'chill' => 0, 'speed' => 0)
     assert_equal direction, response_wind.direction
     assert_kind_of String, response_wind.direction('s')
     assert_equal direction_string, response_wind.direction('s')
