@@ -1,4 +1,19 @@
 language: ruby
+
 rvm:
-  - 2.0.0
-  - 1.9.3
+  - 2.3.0
+  - 2.2.4
+  - 2.1.8
+
+gemfile:
+  - Gemfile
+
+sudo: false
+
+cache: bundler
+
+before_install: "rm ${BUNDLE_GEMFILE}.lock"
+
+before_script: "bundle update"
+
+script: "bin/test"
