@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yahoo_weather (1.1.1)
+    yahoo_weather (1.2.0)
       rails (>= 4.1.0)
 
 GEM
