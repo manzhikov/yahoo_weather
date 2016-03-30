@@ -74,14 +74,14 @@ class YahooWeatherTest < ActiveSupport::TestCase
   test 'Location' do
     assert_instance_of YahooWeather::Location, @response.location
     assert_equal 'San Francisco', @response.location.city
-    assert_equal 'CA', @response.location.region
+    assert_equal ' CA', @response.location.region
     assert_equal 'United States', @response.location.country
   end
 
   test 'Forecasts' do
     assert_not_nil @response.forecasts
     assert_kind_of Array, @response.forecasts
-    assert_equal 5, @response.forecasts.length
+    assert_equal 10, @response.forecasts.length
     @response.forecasts.each do |forecast|
       assert_instance_of YahooWeather::Forecast, forecast
       assert(forecast.day && forecast.day.length == 3)
