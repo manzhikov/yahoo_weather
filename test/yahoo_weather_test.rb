@@ -123,8 +123,8 @@ class YahooWeatherTest < ActiveSupport::TestCase
 
   private
 
-  def _assert_valid_response(response, _request_location, _units,
-                             _city, _region, _country)
+  def _assert_valid_response(response, _request_location,
+                             _units, _city, _region, _country)
     assert_not_nil response
   end
 
