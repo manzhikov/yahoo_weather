@@ -1,6 +1,7 @@
 # yahoo_weather 
 [![Build Status](https://travis-ci.org/manzhikov/yahoo_weather.png?branch=master)](https://travis-ci.org/manzhikov/yahoo_weather)
 [![Code Climate](https://codeclimate.com/github/manzhikov/yahoo_weather/badges/gpa.svg)](https://codeclimate.com/github/manzhikov/yahoo_weather)
+[![Test Coverage](https://codeclimate.com/github/manzhikov/yahoo_weather/badges/coverage.svg)](https://codeclimate.com/github/manzhikov/yahoo_weather/coverage)
 
 A Ruby object-oriented interface to the Yahoo! Weather JSON API.
 
